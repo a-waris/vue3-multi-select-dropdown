@@ -1,17 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h3 class="text-lg font-semibold text-gray-700 mb-2">My Dropdown</h3>
+    <DropDown :items="dropdownItems" :multiple="true" :width="'w-1/2'" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DropDown from "./components/DropDown.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    DropDown,
+  },
+  data() {
+    return {
+      dropdownItems: [
+        { title: "Item 1", value: "1" },
+        { title: "Item 2", value: "2" },
+        // ... more items
+      ],
+    };
+  },
+};
 </script>
 
 <style>
